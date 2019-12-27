@@ -1,0 +1,946 @@
+    1  ifconfig
+    2  setup
+    3  service network restart
+    4  ifconfig
+    5  vim /etc/selinux/config
+    6  reboot
+    7  yum -y install gcc gcc-c++
+    8  mont /dev/sr0 /media
+    9  mount /dev/sr0 /media
+   10  yum -y install gcc gcc-c++
+   11  setup
+   12  cd /etc/yum.repos.d
+   13  ls
+   14  mv CentOS-Base.repo CentOS-Base.repo.bak
+   15  vim CentOS-Media.repo 
+   16  cd /lamp/mcrypt-2.6.8
+   17  LD_LIBRARY_PATH=/usr/local/libmcrypt/lib:/usr/local/lib./configure --with-libmcrypt-prefix=/usr/local/libmcrypt
+   18  echo $?
+   19   LD_LIBRARY_PATH=/usr/local/libmcrypt/lib:/usr/local/lib./configure --with-libmcrypt-prefix=/usr/local/libmcrypt
+   20  LD_LIBRARY_PATH=/usr/local/libmcrypt/lib:/usr/local/lib  ./configure --with-libmcrypt-prefix=/usr/local/libmcrypt
+   21  echo $?
+   22  make
+   23  make install
+   24  echo $?
+   25  cd  /lamp/zlib-1.2.3
+   26  ./configure
+   27  vi Makefile
+   28  echo $?
+   29  make 
+   30  make install
+   31  echo $?
+   32  ls
+   33  ls | wc -l
+   34  cd lamp
+   35  ls
+   36  ls -l |wc -l
+   37  ls |wc -l
+   38  cd
+   39  ls
+   40  vim tar.sh
+   41  mv lamp /lamp
+   42  ls
+   43  cd /
+   44  ls
+   45  cd
+   46  chmod 777 tar.sh 
+   47  ./tar.sh
+   48  cd /lamp
+   49  ls
+   50  cd
+   51  yum -y install python-devel
+   52   cd /lamp/libxml2-2.9.1
+   53   ./configure --prefix=/usr/local/libxml2/
+   54  make
+   55  echo $?
+   56  make install
+   57  echo $?
+   58   cd /lamp/libmcrypt-2.5.8
+   59   ./configure --prefix=/usr/local/libmcrypt/
+   60  make
+   61  make install
+   62  echo $?
+   63   cd /lamp/libmcrypt-2.5.8/libltdl
+   64   ./configure --enable-ltdl-install
+   65  make
+   66  make install
+   67  echo $ ?
+   68  echo $?
+   69  cd /lamp/mhash-0.9.9.9
+   70  ./configure 
+   71  make
+   72  make install
+   73  echo $?
+   74  cd /lamp/mcrypt-2.6.8
+   75  /usr/local/libmcrypt/lib:/usr/local/lib  ./configure --with-libmcrypt-prefix=/usr/local/libmcrypt
+   76  /usr/local/libmcrypt/lib:/usr/local/lib  ./configure --with-libmcrypt-prefix=/usr/local/libmcrypt
+   77  /usr/local/libmcrypt/lib:/usr/local/lib./configure --with-libmcrypt-prefix=/usr/local/libmcrypt
+   78  LD_LIBRARY_PATH=/usr/local/libmcrypt/lib:/usr/local/lib./configure --with-libmcrypt-prefix=/usr/local/libmcrypt
+   79  yum -y install ncurses-devel
+   80  echo $?
+   81  yum -y install ncurses-devel
+   82  cd /lamp/ncurses-5.9
+   83  ./configure --with-shared --without-debug --without-ada --enable-overwrite
+   84  echo $?
+   85  make 
+   86  echo $?
+   87  make install
+   88  echo $?
+   89  yum -y install cmake
+   90  echo $?
+   91  cd
+   92  yum -y install cmake
+   93  echo $?
+   94  cd /media
+   95  ls
+   96  mount /dev/sr0 /media
+   97  yum -y install cmake
+   98  yum -y install bison
+   99  useradd  -r  -s /sbin/nologin mysql
+  100  cd /lamp/mysql-5.5.48
+  101  cmake  -DCMAKE_INSTALL_PREFIX=/usr/local/mysql    -DMYSQL_UNIX_ADDR=/tmp/mysql.sock  -DEXTRA_CHARSETS=all   -DDEFAULT_CHARSET=utf8    -DDEFAULT_COLLATION=utf8_general_ci    -DWITH_MYISAM_STORAGE_ENGINE=1   -DWITH_INNOBASE_STORAGE_ENGINE=1    -DWITH_MEMORY_STORAGE_ENGINE=1  -DWITH_READLINE=1    -DENABLED_LOCAL_INFILE=1   -DMYSQL_USER=mysql  -DMYSQL_TCP_PORT=3306
+  102  echo $?
+  103  make
+  104  echo $?
+  105  make install
+  106  cd /usr/local/mysql/
+  107  chown -R root .
+  108  chown -R mysql data
+  109  cp support-files/my-medium.cnf /etc/my.cnf
+  110  /usr/local/mysql/scripts/mysql_install_db --user=mysql
+  111  echo $?
+  112  /usr/local/mysql/bin/mysqld_safe --user=mysql &
+  113  echo $?
+  114  ps aux
+  115  vim /etc/rc.local
+  116  /usr/local/mysql/bin/mysqladmin -uroot password 123
+  117   /usr/local/mysql/bin/mysql -u root -p 
+  118  yum -y install "libtool*"
+  119  echo $?
+  120  cd /lamp/php-7.0.7
+  121  ls
+  122  ./configure --prefix=/usr/local/php/ --with-config-file-path=/usr/local/php/etc/ --with-apxs2=/usr/local/apache2/bin/apxs  --with-libxml-dir=/usr/local/libxml2/ --with-jpeg-dir=/usr/local/jpeg6/ --with-png-dir=/usr/local/libpng/ --with-freetype-dir=/usr/local/freetype/ --with-mcrypt=/usr/local/libmcrypt/   --with-mysqli=/usr/local/mysql/bin/mysql_config --enable-soap --enable-mbstring=all --enable-sockets  --with-pdo-mysql=/usr/local/mysql --with-gd   --without-pear
+  123  make
+  124  make install
+  125   mkdir /usr/local/php/etc/
+  126  cp /lamp/php-7.0.7/php.ini-production /usr/local/php/etc/php.ini  
+  127  vim /usr/local/apache2/etc/httpd.conf
+  128  /usr/local/apache2/bin/apachectl stop
+  129   /usr/local/apache2/bin/apachectl start
+  130  vim /usr/local/apache2/htdocs/test.php
+  131  echo $PATH 
+  132  vim /etc/profile
+  133  source /etc/profile  
+  134  php -v
+  135  yum -y install openssl-devel 
+  136  mount /dev/cdrom /mnt
+  137  cd /media
+  138  ls
+  139  cd /etc/yum.repos.d
+  140  mount
+  141  umount
+  142  umount /dev/cdrom
+  143  mount /dev/cdrom /media/
+  144  mount
+  145  cd /media
+  146  ls
+  147  rpm -e openssl --modeps
+  148  cd /media
+  149  ls
+  150  rpm -e openssl --modeps
+  151  vim /etc/yum.repos.d/CentOS-Base.repo.bak 
+  152  vim /etc/yum.repos.d/CentOS-Media.repo 
+  153  cd
+  154  yum -y install openssl-devel 
+  155  vim /etc/yum.repos.d/CentOS-Media.repo 
+  156  yum -y install openssl-devel 
+  157  umount /dev/cdrom
+  158  mount /dev/cdrom /mnt/
+  159  cd /mnt/
+  160  ls
+  161  vim /etc/yum.repos.d/CentOS-Media.repo 
+  162  cd
+  163  mount /dev/cdrom /mnt
+  164  yum -y install openssl-devel 
+  165  history
+  166  yum -y install openssl-devel 
+  167  mount /dev/sr0 /mnt
+  168  yum -y install openssl-devel 
+  169  cd /lamp/php-7.0.7/ext/openssl
+  170  mv config0.m4 config.m4
+  171  /usr/local/php/bin/phpize 
+  172  echo $?
+  173  ./configure --with-openssl --with-php-config=/usr/local/php/bin/php-config 
+  174  make
+  175  echo $?
+  176  make install
+  177  echo $/
+  178  echo $?
+  179  cd /usr/local/php/lib/php/extensions/no-debug-zts-20151012/
+  180  ls
+  181  vim /usr/local/php/etc/php.ini
+  182  apachectl stop
+  183  apachectl start
+  184  echo 
+  185  echo $?
+  186  cp -a /lamp/phpMyAdmin-4.1.4-all-languages /usr/local/apache2/htdocs/phpmyadmin
+  187  cd /usr/local/apache2/htdocs/phpmyadmin
+  188  cp config.sample.inc.php config.inc.php
+  189  vim config.inc.php
+  190  cd /usr/local/apache2/etc/
+  191  ls
+  192  vim httpd.conf
+  193  vim /root/.vimrc
+  194  vim httpd.conf
+  195  cd /
+  196  mkdir www
+  197  ls
+  198  vim /www/index.html
+  199  cd
+  200  vim /root/.bashrc
+  201  source /root/.bashrc
+  202  sto
+  203  sta
+  204  cd /
+  205  ls
+  206  cd www
+  207  ls
+  208  vim index.html 
+  209  sto
+  210  sta
+  211  cd
+  212  cd /usr/local/apache2/etc/
+  213  ls
+  214  vim httpd.conf
+  215  vim h
+  216  vim httpd.conf
+  217  sto
+  218  sta
+  219  cd /usr/local/apache2/htdocs/
+  220  ls
+  221  mv index.html a.html
+  222  ls
+  223  cd -
+  224  ls
+  225  vim httpd.conf
+  226  sto
+  227  sta
+  228  vim httpd.conf
+  229  sto
+  230  sta
+  231  vim httpd.conf
+  232  cd /usr/local/apache2/htdocs/
+  233  ls
+  234  cd /usr/local/apache2/htdocs/
+  235  ls
+  236  cd /usr/local/apache2/
+  237  ls
+  238  mkdir www
+  239  ls
+  240  vim /usr/local/apache2/
+  241  la
+  242  ls
+  243  cd etc
+  244  ls
+  245  vim httpd.conf
+  246  ls
+  247  cd etc
+  248  ls
+  249  cd extra
+  250  ls
+  251  vim httpd-autoindex.conf 
+  252  sto
+  253  sta
+  254  cd /usr/local/apache2/www
+  255  ls
+  256  cd /usr/local/apache2/
+  257  ls
+  258  cd www/
+  259  ls
+  260  vim index.html
+  261  sto
+  262  sta
+  263  vim /usr/local/apache2/etc/
+  264  vim /usr/local/apache2/etc/extra/httpd-autoindex.conf 
+  265  sto
+  266  sta
+  267  echo $?
+  268  cd /usr/local/apache2/etc/
+  269  ls
+  270  vim /extra/httpd_autoindex.conf
+  271  vim /usr/local/apache2/etc/extra/httpd-autoindex.conf 
+  272  sto
+  273  sta
+  274  cd
+  275  sto
+  276  sta
+  277  vim /usr/local/apache2/etc/extra/httpd-autoindex.conf 
+  278  sto
+  279  sta
+  280  cd /
+  281  ls
+  282  mkdir -p /share/sina
+  283  mkdir /share/sohu
+  284  ls
+  285  cd share
+  286  ls
+  287  cd /usr/local/apache2/etc/
+  288  ls
+  289  cd extra/
+  290  ls
+  291  cd -
+  292  ls
+  293  vim httpd.conf
+  294  vim /usr/local/apache2/etc/extra//httpd-vhosts.conf 
+  295  vim /usr/local/apache2/etc/extra/httpd-vhosts.conf 
+  296  sto
+  297  sta
+  298  cd /share/sina
+  299  ls
+  300  vim index.html
+  301  cd ..
+  302  cd sohu
+  303  ls
+  304  vim index.html
+  305  sto
+  306  sta
+  307  cd
+  308  sto
+  309  sta
+  310  echo $?
+  311  cd ..
+  312  ls
+  313  cd share
+  314  ls
+  315  cd sina
+  316  ls
+  317  vim index.html 
+  318  cd
+  319  vim /usr/local/apache2/etc/httpd.conf
+  320  vim /usr/local/apache2/etc/extra/httpd-vhosts.conf 
+  321  vim /share/sina/.htaccess
+  322  sto
+  323  sta
+  324  vim /share/sina/.htaccess 
+  325  sto
+  326  sta
+  327  cd /share
+  328  ls
+  329  cd sina
+  330  ls
+  331  vim index.html 
+  332  cd sohu
+  333  cd /sohu
+  334  cd..
+  335  cd /share
+  336  ls
+  337  cd sohu
+  338  ls
+  339  vim index.html 
+  340  vim /usr/local/apache2/etc/httpd.conf
+  341  vim /usr/local/apache2/etc/extra/httpd-vhosts.conf 
+  342  sto
+  343  sta
+  344  vim /share/sina/.htaccess 
+  345  sto
+  346  sta
+  347  echo $?
+  348  vim /usr/local/apache2/etc/httpd.conf
+  349  vim /usr/local/apache2/etc/extra/httpd-vhosts.conf 
+  350  sto
+  351  sta
+  352  vim /share/sina/.htaccess 
+  353  vim /share/sina/index.html 
+  354  sto
+  355  sta
+  356  vim /share/sina/.htaccess 
+  357  vim /share/sina/index.php
+  358  sto
+  359  sta
+  360  vim /usr/local/nginx/conf/nginx.conf
+  361  cd /home
+  362  ls
+  363  cd wwwroot/
+  364  ls
+  365  cd default/
+  366  ls
+  367  vim index.html 
+  368  lnmp nginx restart
+  369  echo $?
+  370  vim /home/wwwroot/default/
+  371  cd /home/wwwroot/
+  372  ls
+  373  cd default/
+  374  ls
+  375  cd sina
+  376  cd ..
+  377  ls
+  378  cd sina
+  379  ls
+  380  cd /usr/local/nginx/conf/
+  381  ls
+  382  cd vhost/
+  383  ls
+  384  vim v.conf 
+  385  pkill -HUP nginx
+  386  cd /home/wwwroot/
+  387  ls
+  388  cd sina
+  389  ls
+  390  mv index.html a.html
+  391  pkill -HUP nginx
+  392  cd /usr/local/nginx/conf/
+  393  ls
+  394  cd vhost/
+  395  ls
+  396  vim v.conf 
+  397  pkill -HUP nginx
+  398  ls
+  399  vim v.conf 
+  400  pkill -HUP nginx
+  401  ls
+  402  /usr/local/nginx/sbin/nginx -t
+  403  vim v.conf 
+  404  /usr/local/nginx/sbin/nginx -t
+  405  cd  /home/wwwroot/default
+  406  ls
+  407  vim index.php
+  408  pkill -HUP nginx
+  409  /usr/local/nginx/sbin/nginx -t
+  410  vim /usr/local/nginx/conf/vhost/v.conf
+  411  pkill -HUP nginx
+  412  vim /usr/local/nginx/conf/nginx.conf
+  413  vim /usr/local/nginx/conf/vhost/
+  414  cd /usr/local/nginx/conf/vhost/
+  415  ls
+  416  vim v.conf 
+  417  cd /home/wwwroot/default/
+  418  ls
+  419  tail index.php 
+  420  vim index.php 
+  421  /usr/local/nginx/sbin/nginx -t
+  422  pkill -HUP nginx
+  423  cd /home/wwwroot/
+  424  ls
+  425  cd sina
+  426  ls
+  427  mv a.html index.html
+  428  ls
+  429  pkill -HUP nginx
+  430  cd /usr/local/nginx/conf/nginx.conf
+  431  cd /usr/local/nginx/conf/
+  432  ls
+  433  vim nginx.conf
+  434  cd vhost/
+  435  ls
+  436  vim v.conf 
+  437  lnmp nginx restart
+  438  vim v.conf 
+  439  cd /home/
+  440  ls
+  441  cd wwwroot/
+  442  ls
+  443  cd sina
+  444  ls
+  445  vim index.html 
+  446  cd default
+  447  vim index.php
+  448  pkill -HUP nginx
+  449  vim /usr/local/nginx/conf/nginx.conf
+  450  cd /usr/local/nginx/conf/
+  451  ls
+  452  ls -a
+  453  rm -rf nginx.conf.swp
+  454  vim nginx.conf
+  455  cd
+  456  sh
+  457  vim /etc/shells
+  458  dash
+  459  vim /etc/rc.local
+  460  ls -a
+  461  vim .history
+  462  vim .bash_history 
+  463  history -w
+  464  vim .bash_history 
+  465  history
+  466  alias
+  467  ls >bak.list
+  468  tai bak.list 
+  469  tail bak.list 
+  470  ls -l >> bak.list 
+  471  vim bak.list 
+  472  lss 2> bak.list 
+  473  vim bak.list 
+  474  lss 2>> bak.list 
+  475  vim bak.list 
+  476  ls &> /dev/null
+  477  cd /dev/null
+  478  lss >> a.txt
+  479  lss >> a.txt 2>&1
+  480  vim a.txt 
+  481  netstat -an | grep ESTABLISHED | wc -l
+  482  day = holiday
+  483  day=holiday
+  484  echo $day
+  485  set
+  486  unset day
+  487  ls
+  488  echo $day
+  489  vim /etc/profile
+  490  echo $PATH
+  491  echo $USER
+  492  echo $PS1
+  493  PS1='[\u@\h \w \t #\#]\$'
+  494  ls
+  495  history
+  496  ls
+  497  date 20180307
+  498  date -s 20180327
+  499  date -s 11:10
+  500  env
+  501  csh
+  502  ls
+  503  vim read.sh
+  504  bc
+  505  . read.sh
+  506  DAY=xingqier
+  507  echo $DAY
+  508  echo "$DAY"
+  509  echo '$DAY'
+  510  echo `$DAY`
+  511  vim read.sh 
+  512  . read.sh
+  513  vim /etc/profile
+  514  echo $PATH
+  515  env
+  516  sh
+  517  echo $!
+  518  echo $$
+  519  cd 
+  520  ls
+  521  . read.sh 
+  522  . read.sh &
+  523  echo $!
+  524  fg 1
+  525  jobs
+  526  . read.sh 
+  527  . read.sh &
+  528  9
+  529  jobs
+  530  fg 1
+  531  cd /etc/rc.d/init.d
+  532  ls
+  533  cd
+  534  vim var.sh
+  535  . var.sh
+  536  ./var.sh
+  537  chmod 777 var.sh
+  538  ./var.sh
+  539  ls
+  540  touch 1.txt 2.txt 3.txt
+  541  ls
+  542  rm -rf[1-9]
+  543  rm -rf [1-9].*
+  544  ls
+  545  vim repboot.sh
+  546  LS
+  547  ls
+  548  . repboot.sh 
+  549  grep "[^a-z]i686" install.log
+  550  ls
+  551  vim install.log
+  552  grep "[^a-z]noarch" install.log
+  553  grep ".\$" install.log
+  554  grep "\.$" install.log
+  555  grep "6$" install.log
+  556  grep "h$" install.log
+  557  grep "^[^A-Z a-z]" install.log
+  558  grep "^$" install.log
+  559  grep "^$" read.sh 
+  560  grep -n "^$" read.sh 
+  561  last
+  562  last | awk '{printf $1 "\t" $3 "\n"}'
+  563  last | grep "[0-9]\{1,3\}\.[0-9]\{1,3}.[0-9]\{1,3\}\.[0-9]\{1,3\}"| awk '{printf$1 "\t" $3 "\n"}'
+  564  last | grep "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}"|awk '{printf $1 "\t" $3 "\n"}'
+  565  more /etc/passwd | awk 'BEGIN {FS=":"} {printf $1 "\t" $3 "\n"}'
+  566  last > file.test
+  567  vim file.test 
+  568  awk '{print$0 "\n"}' file.test
+  569  awk '{print $1 "\t" $7 "\n"}' file.test 
+  570  more /etc/passwd | grep "/bin/bash" | cut -d ":" -f 1,3
+  571  echo helloworld
+  572  ech"hello"
+  573  echo -e hello
+  574  echo -e "hello"
+  575  echo -e "1\t2\t3\t4"
+  576  echo -e "\e[1;31m hello \e[0m"
+  577  echo -e "\e[1;32m hello \e[0m"
+  578  ls
+  579  tail read.sh 
+  580  vim read.sh 
+  581  . read.sh
+  582  [  -d/etc/vsftpd ]
+  583  echo $?
+  584  cd /etc/
+  585  ls
+  586  [  -e/media/cdrom  ] && echo "YES"
+  587  cd /media
+  588  ls
+  589  cd cdrom
+  590  cd /media/cdrom
+  591  ls
+  592  cd
+  593  [  -e /media/cdrom   ] && echo "YES"
+  594  WHO
+  595  who
+  596  who | wc-l
+  597  who | wc -l
+  598  [  'who | wc -l' -le 10 ] && echo "YES"
+  599  [ 'who|wc -l' -le 10 ] && echo "YES"
+  600  df -h
+  601  df -hT
+  602  [ `who | wc -l' -le 10  ]&& echo "YES"
+  603  [  `who | wc -l` -le 10  ] && echo "YES"
+  604  df -hT | grep "/boot" | awk '{print $6}'
+  605  bootusage=`df -hT |grep "/boot" | awk '{print $6}' | cut -d "%" -fl'
+  606  bootusage=`df -hT |grep "/boot" | awk '{print $6}' | cut -d "%" -fl`
+  607  bootusage=`df -hT |grep "/boot" | awk '{print $6}' | cut -d "%" -f 1`
+  608  echo $bootusage
+  609  [  bootusage -gt 95  ] && echo "YES"
+  610  [ $bootusage -gt 95  ] && echo "YES"
+  611  read -p "Location:"FilePath
+  612  read -p "Location:"/etc/inittab
+  613  read -p "Location:"FilePath
+  614  read -p "Location: " FilePath
+  615  [ $FilePath=="/etc/inittab"  ] && echo "YES"
+  616  read -p "Location: "FilePath
+  617  read -p "Location: " FilePath
+  618  [  $LANG !="en.US" ] && echo $LANG
+  619  env
+  620  [ $LANG != "en.US"  ] && echo $LANG
+  621  echo $USER
+  622  [ $USER = "teacher" ] || echo "not teacher"
+  623  ls
+  624  vim ifdan.sh
+  625  . ifdan.sh
+  626  ls
+  627  . ifdan.sh
+  628  vim ifdan.sh 
+  629  . ifdan.sh 
+  630  vim ifdan.sh 
+  631  . ifdan.sh 
+  632  vim ifdan.sh 
+  633  . ifdan.sh 
+  634  vim ifdan.sh 
+  635  . ifdan.sh 
+  636  vim ifdan.sh 
+  637  . ifdan.sh 
+  638  vim ifdan.sh 
+  639  . ifdan.sh 
+  640  vim ifdan.sh 
+  641  . ifdan.sh 
+  642  vim ifdan.sh 
+  643  . ifdan.sh 
+  644  vim ifshuang.sh
+  645  . ifshuang.sh 
+  646  vim showday.sh
+  647  . showday.sh 
+  648  cal
+  649  cal 1996
+  650  ls /opt
+  651  cd rh
+  652  cd /opt
+  653  ls
+  654  cd rh
+  655  ls
+  656  cd /opt/dbbak
+  657  cd /
+  658  ls
+  659  cd opt/
+  660  ls
+  661  cd rh
+  662  ls
+  663  cd
+  664  vim while1.sh
+  665  . while1.sh 
+  666  vim while1.sh 
+  667  . while1.sh 
+  668  vim while1.sh 
+  669  . while1.sh 
+  670  vim while1.sh 
+  671  . while1.sh 
+  672  tail /etc/passwd
+  673  tail while1.sh 
+  674  . while1.sh 
+  675  vim test1.sh
+  676  cd /etc
+  677  ls
+  678  cd passwd
+  679  vim passwd
+  680  vim group
+  681  cd
+  682  . test1.sh 
+  683  tail /etc/passwd
+  684  vim /etc/passwd
+  685  vi test1.sh 
+  686  vim while1.sh 
+  687  . while1.sh 
+  688  tail /etc/passwd
+  689  vim while1.sh 
+  690  . while1.sh 
+  691  echo $?
+  692  vim while1.sh 
+  693  rm -rf while1.sh 
+  694  vim t1.sh
+  695  . t1.sh 
+  696  tail /etc/passwd
+  697  tail -20 /etc/passwd
+  698  vim del.sh
+  699  . del.sh 
+  700  vim /etc/passwd
+  701  vim del.sh 
+  702  . del.sh 
+  703  vim /etc/passwd
+  704  vim del.sh 
+  705  . del.sh 
+  706  vim del.sh 
+  707  . del.sh 
+  708  yum -y install openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel
+  709  tar -xzvf Python-3.6.1.tgz 
+  710  cd  Python-3.6.1/
+  711  ls
+  712  ./configure  --prefix=/usr/local/
+  713  make
+  714  make altinstall
+  715  python
+  716  cd /usr/local/bin
+  717  ls
+  718  /usr/local/bin/python3.6
+  719  python3.6
+  720  yum -y install tree
+  721  cd /usr/bin/
+  722  ls
+  723  ls py*
+  724  mv python python.backup
+  725  ln -s /usr/local/bin/python3.6 /usr/bin/python
+  726  ln -s /usr/local/bin/python3.6 /usr/bin/python3
+  727  rm -rf /usr/bin/python2
+  728  ln -s /usr/bin/python2.6 /usr/bin/python2
+  729  cd /usr/bin/
+  730  ls yum*
+  731  vim yum
+  732  vim yum-debug-restore 
+  733  vim yum-builddep 
+  734  vim yumdownloader 
+  735  vim yum-config-manager 
+  736  vim yum-groups-manager 
+  737  vim yum-debug-dump 
+  738  yum -y install tree
+  739  python
+  740  cd /etc/yum.repos.d
+  741  mount
+  742  cd
+  743  cd /etc/yum.repos.d
+  744  ls
+  745  cd CentOS-Media.repo 
+  746  rpm -vih openssl-devel
+  747  mount
+  748  umount /media
+  749  ls
+  750  vim CentOS-Media.repo 
+  751  mount /dev/sr0 /mnt
+  752  yum -y install openssl-devel
+  753  shutdown -r now
+  754  history
+  755  bootusage=`df -hT |grep "/boot" | awk '{print $6}' | cut -d "%" -fl'
+  756  bootusage=`df -hT |grep "/boot" | awk '{print $6}' | cut -d "%" -fl`
+  757  bootusage=`df -hT |grep "/boot" | awk '{print $6}' | cut -d "%" -f 1`
+  758  echo $bootusage
+  759  [  bootusage -gt 95  ] && echo "YES"
+  760  [ $bootusage -gt 95  ] && echo "YES"
+  761  read -p "Location:"FilePath
+  762  read -p "Location:"/etc/inittab
+  763  read -p "Location:"FilePath
+  764  read -p "Location: " FilePath
+  765  [ $FilePath=="/etc/inittab"  ] && echo "YES"
+  766  read -p "Location: "FilePath
+  767  read -p "Location: " FilePath
+  768  [  $LANG !="en.US" ] && echo $LANG
+  769  env
+  770  [ $LANG != "en.US"  ] && echo $LANG
+  771  echo $USER
+  772  [ $USER = "teacher" ] || echo "not teacher"
+  773  ls
+  774  vim ifdan.sh
+  775  . ifdan.sh
+  776  ls
+  777  . ifdan.sh
+  778  vim ifdan.sh 
+  779  . ifdan.sh 
+  780  vim ifdan.sh 
+  781  . ifdan.sh 
+  782  vim ifdan.sh 
+  783  . ifdan.sh 
+  784  vim ifdan.sh 
+  785  . ifdan.sh 
+  786  vim ifdan.sh 
+  787  . ifdan.sh 
+  788  vim ifdan.sh 
+  789  . ifdan.sh 
+  790  vim ifdan.sh 
+  791  . ifdan.sh 
+  792  vim ifdan.sh 
+  793  . ifdan.sh 
+  794  vim ifshuang.sh
+  795  . ifshuang.sh 
+  796  vim showday.sh
+  797  . showday.sh 
+  798  cal
+  799  cal 1996
+  800  ls /opt
+  801  cd rh
+  802  cd /opt
+  803  ls
+  804  cd rh
+  805  ls
+  806  cd /opt/dbbak
+  807  cd /
+  808  ls
+  809  cd opt/
+  810  ls
+  811  cd rh
+  812  ls
+  813  cd
+  814  vim while1.sh
+  815  . while1.sh 
+  816  vim while1.sh 
+  817  . while1.sh 
+  818  vim while1.sh 
+  819  . while1.sh 
+  820  vim while1.sh 
+  821  . while1.sh 
+  822  tail /etc/passwd
+  823  tail while1.sh 
+  824  . while1.sh 
+  825  vim test1.sh
+  826  cd /etc
+  827  ls
+  828  cd passwd
+  829  vim passwd
+  830  vim group
+  831  cd
+  832  . test1.sh 
+  833  tail /etc/passwd
+  834  vim /etc/passwd
+  835  vi test1.sh 
+  836  vim while1.sh 
+  837  . while1.sh 
+  838  tail /etc/passwd
+  839  vim while1.sh 
+  840  . while1.sh 
+  841  echo $?
+  842  vim while1.sh 
+  843  rm -rf while1.sh 
+  844  vim t1.sh
+  845  . t1.sh 
+  846  tail /etc/passwd
+  847  tail -20 /etc/passwd
+  848  vim del.sh
+  849  . del.sh 
+  850  vim /etc/passwd
+  851  vim del.sh 
+  852  . del.sh 
+  853  vim /etc/passwd
+  854  vim del.sh 
+  855  . del.sh 
+  856  vim del.sh 
+  857  . del.sh 
+  858  vim del.sh 
+  859  . del.sh 
+  860  vim /etc/passwd
+  861  vim del.sh 
+  862  . del.sh 
+  863  tail /etc/passwd
+  864  man ls
+  865  pwd
+  866  cd /etc/
+  867  cd
+  868  ls -a /etc/
+  869  ls -l /etc
+  870  cd /etc/
+  871  ls -dl
+  872  mkdir test
+  873  mkdir -p /etc/test/file
+  874  ls
+  875  cp file01.txt file02.txt
+  876  touch file01.txt
+  877  cp file01.txt file02.txt
+  878  cp -r /tmp /var
+  879  touch file.txt
+  880  rm -f file.txt
+  881  rm -r /test
+  882  cd
+  883  rm -r /test
+  884  mkdir /test
+  885  cd /
+  886  ls
+  887  rm -r test
+  888  mkdir /test
+  889  ls
+  890  rm -rf test/
+  891  ls
+  892  cd /etc
+  893  ls
+  894  mv file01.txt file02.txt
+  895  mv file.txt /tmp
+  896  touch file.txt
+  897  mv file.txt /tmp
+  898  cd /tmp/
+  899  ls
+  900  mv /etc/file.txt /tmp/new.txt
+  901  touch /etc/file.txt
+  902  mv /etc/file.txt  /tmp/new.txt
+  903  touch /etc/file.txt
+  904  find /etc -name  file.txt
+  905  more /etc/file.txt 
+  906  cd
+  907  touch a.php
+  908  touch b.html
+  909  ls
+  910  tar -zcvf new.tar.gz a.txt b.html 
+  911  ls
+  912  tar -jcvf new.tar.bz2 a.php b.html 
+  913  ls
+  914  ping -c 5 192.168.153.77
+  915  whereis ls
+  916  touch file.txt
+  917  vim file.txt 
+  918  grep -n "#" file.txt 
+  919  grep -v "^#" file.txt 
+  920  cd /
+  921  ls
+  922  mkdir -p /test/file
+  923  ls
+  924  chmod g+w  /test/file/
+  925  cd /dir
+  926  mkdir /dir
+  927  ls
+  928  chmod a+x /dir
+  929  ls -l /dir
+  930  cd /dir
+  931  ls -ld
+  932  chmod a+w /dir
+  933  ls -ld
+  934  chown phper /test/file
+  935  useradd phper
+  936  chown phper /test/file/
+  937  ls -l /test/file/
+  938  cd /test/file/
+  939  ls -ld
+  940  groupadd lampbrother
+  941  chown :lampbrother /test/file/
+  942  ls -ld
+  943  mount /dev/sr0 /media
+  944  ls
+  945  cd
+  946  history > history.txt

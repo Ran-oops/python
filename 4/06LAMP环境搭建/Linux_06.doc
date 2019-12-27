@@ -1,0 +1,362 @@
+LAMP 环境搭建
+
+1.准备工作
+
+2.安装辅助软件包
+
+3.安装Apache服务
+
+4.安装MySQL服务
+
+5.安装PHP
+
+6.收尾工作
+
+---
+
+一.准备工作
+
+Linux 系统准备:  恢复快照      设置IP    关闭selinux
+
+配置yum源
+
+```
+1）编辑yum配置文件：
+ mount /dev/sr0 /media
+ vim /etc/yum.repos.d/CentOS-Media.repo 
+[c6-media] 
+name=CentOS-$releasever - Media
+baseurl=file:///media/   * 修改为光盘挂载点
+gpgcheck=0
+enabled=1  * 改为1意为启用
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+2）剪切/etc/yum.repos.d/CentOS-Base.repo
+  mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+3）依次安装gcc、gcc-c++
+ yum -y install gcc  gcc-c++
+```
+
+
+
+关闭防火墙 
+
+```
+setup
+iptables  -F
+iptables  -X
+iptables  -Z
+```
+
+
+
+复制源码包 解压缩
+
+mv  lamp    /lamp
+
+vim   tar.sh
+
+```
+cd /lamp
+/bin/ls *.tar.gz > ls.list
+ 	for TAR in `cat ls.list`rm
+ do
+		/bin/tar -zxf $TAR
+ done
+/bin/rm ls.list
+```
+
+chmod  777  tar.sh
+
+./tar.sh
+
+查看磁盘空间
+
+df  -h   
+
+二.安装辅助软件包
+
+```
+安装libxml2
+```
+
+```
+yum -y install python-devel			必须安装
+
+ cd /lamp/libxml2-2.9.1
+ ./configure --prefix=/usr/local/libxml2/
+ make 
+ make install
+```
+
+```
+安装libmcrypt
+```
+
+```
+ cd /lamp/libmcrypt-2.5.8
+ ./configure --prefix=/usr/local/libmcrypt/
+ make 
+ make install
+```
+
+```
+安装libltdl
+```
+
+```
+ cd /lamp/libmcrypt-2.5.8/libltdl
+ ./configure --enable-ltdl-install
+ make
+ make install
+```
+
+```
+安装mhash
+```
+
+```
+cd /lamp/mhash-0.9.9.9
+./configure 
+make
+make install
+```
+
+```
+安装mcrypt	
+```
+
+```
+cd /lamp/mcrypt-2.6.8
+LD_LIBRARY_PATH=/usr/local/libmcrypt/lib:/usr/local/lib  \
+./configure --with-libmcrypt-prefix=/usr/local/libmcrypt
+make
+make install
+```
+
+```
+安装zlib
+```
+
+```
+cd /lamp/zlib-1.2.3			
+./configure
+ make
+ make install
+```
+
+
+
+```
+安装libpng
+```
+
+```
+ cd /lamp/libpng-1.2.31
+ ./configure --prefix=/usr/local/libpng
+ make
+ make install
+```
+
+```
+安装jpeg6
+```
+
+```
+mkdir /usr/local/jpeg6	
+mkdir /usr/local/jpeg6/bin
+mkdir /usr/local/jpeg6/lib
+mkdir /usr/local/jpeg6/include
+mkdir -p /usr/local/jpeg6/man/man1
+ 
+  cd /lamp/jpeg-6b
+ ./configure --prefix=/usr/local/jpeg6/ --enable-shared --enable-static
+ make	
+ make install
+```
+
+```
+安装freetype
+```
+
+```
+ cd /lamp/freetype-2.3.5
+./configure --prefix=/usr/local/freetype/
+ make
+ make install
+```
+
+三.Apache服务安装
+
+```
+cp  -r  /lamp/apr-1.4.6  /lamp/httpd-2.4.7/srclib/apr
+cp  -r  /lamp/apr-util-1.4.1  /lamp/httpd-2.4.7/srclib/apr-util
+
+cd /lamp/pcre-8.34  
+./configure && make && make install
+
+ cd /lamp/httpd-2.4.7
+ ./configure --prefix=/usr/local/apache2/ --sysconfdir=/usr/local/apache2/etc/ --with-included-apr --enable-so --enable-deflate=shared --enable-expires=shared --enable-rewrite=shared
+ make
+ make install
+ 
+ 
+ 启动服务
+ /usr/local/apache2/bin/apachectl start
+ps  aux | grep httpd
+netstat –tlun | grep :80
+
+测试  打开浏览器   192.168.2.251
+
+设置开机自启动
+vim  /etc/rc.local
+/usr/local/apache2/bin/apachectl start
+```
+
+四.MySQL服务安装
+
+```
+安装服务
+yum -y install ncurses-devel
+yum -y install cmake
+yum -y install bison
+
+ groupadd mysql
+ useradd -g mysql mysql
+ 
+ cd /lamp/mysql-5.5.48
+cmake  -DCMAKE_INSTALL_PREFIX=/usr/local/mysql    -DMYSQL_UNIX_ADDR=/tmp/mysql.sock  -DEXTRA_CHARSETS=all   -DDEFAULT_CHARSET=utf8    -DDEFAULT_COLLATION=utf8_general_ci    -DWITH_MYISAM_STORAGE_ENGINE=1   -DWITH_INNOBASE_STORAGE_ENGINE=1    -DWITH_MEMORY_STORAGE_ENGINE=1  -DWITH_READLINE=1    -DENABLED_LOCAL_INFILE=1   -DMYSQL_USER=mysql  -DMYSQL_TCP_PORT=3306
+make  &&  make  install
+
+----------------------------------------------------------
+
+配置服务
+cd /usr/local/mysql/
+chown -R mysql .
+chgrp -R mysql .
+#修改mysql目录权限
+/usr/local/mysql/scripts/mysql_install_db --user=mysql
+#创建数据库授权表，初始化数据库
+chown -R root .
+chown -R mysql data
+#修改mysql目录权限
+
+cp support-files/my-medium.cnf /etc/my.cnf
+#复制mysql配置文件
+
+二次授权
+/usr/local/mysql/scripts/mysql_install_db --user=mysql
+
+-------------------------------------------------
+
+启动MySQL服务：
+1.用原本源代码的方式去使用和启动mysql
+/usr/local/mysql/bin/mysqld_safe --user=mysql &
+2.重启以后还要生效:
+vim /etc/rc.local
+/usr/local/mysql/bin/mysqld_safe --user=mysql &
+3.设定mysql密码
+/usr/local/mysql/bin/mysqladmin -uroot password 123456
+	清空历史命令 	history  -c
+
+ /usr/local/mysql/bin/mysql -u root -p 
+ mysql> \s    查看配置
+ mysql> quit  退出
+ 
+```
+
+五.安装PHP
+
+```
+yum -y install "libtool*"
+
+cd /lamp/php-7.0.7
+./configure --prefix=/usr/local/php/ --with-config-file-path=/usr/local/php/etc/ --with-apxs2=/usr/local/apache2/bin/apxs  --with-libxml-dir=/usr/local/libxml2/ --with-jpeg-dir=/usr/local/jpeg6/ --with-png-dir=/usr/local/libpng/ --with-freetype-dir=/usr/local/freetype/ --with-mcrypt=/usr/local/libmcrypt/   --with-mysqli=/usr/local/mysql/bin/mysql_config --enable-soap --enable-mbstring=all --enable-sockets  --with-pdo-mysql=/usr/local/mysql --with-gd   --without-pear
+
+make   &&  make  install
+
+-------------------------------------------------------
+mkdir /usr/local/php/etc/
+cp /lamp/php-7.0.7/php.ini-production /usr/local/php/etc/php.ini  
+
+vim /usr/local/apache2/etc/httpd.conf
+ AddType application/x-httpd-php .php .phtml 
+ AddType application/x-httpd-php-source .phps
+ 
+  重启Apache服务：/usr/local/apache2/bin/apachectl stop
+				  /usr/local/apache2/bin/apachectl start
+				  
+vim /usr/local/apache2/htdocs/test.php    
+ 	<?php
+		phpinfo();
+ ?>
+ 
+ 测试  浏览器   192.168.2.251/test.php
+ 
+```
+
+```
+添加环境变量
+
+vim  /etc/profile
+
+export PATH="/usr/local/php/bin:$PATH"
+export PATH="/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/apache2/bin:$PATH"
+
+source  /etc/profile
+
+php -v
+mysql -u root -p
+apachectl  -v
+```
+
+六.收尾工作
+
+扩展模块后续安装
+
+```
+安装openssl
+
+yum -y install openssl-devel   必须安装
+cd /lamp/php-7.0.7/ext/openssl
+mv config0.m4 config.m4                否则报错：找不到config.m4
+/usr/local/php/bin/phpize 
+./configure --with-openssl --with-php-config=/usr/local/php/bin/php-config 
+make
+make install
+
+
+vim  /usr/local/php/etc/php.ini
+extension_dir = "/usr/local/php/lib/php/extensions/no-debug-zts-20151012/"
+#打开注释，并修改
+extension="openssl.so";
+
+apachectl  stop
+apachectl  start
+```
+
+```
+安装phpMyAdmin
+
+cp -r /lamp/phpMyAdmin-4.1.4-all-languages /usr/local/apache2/htdocs/phpmyadmin
+cd /usr/local/apache2/htdocs/phpmyadmin
+cp config.sample.inc.php config.inc.php
+vim config.inc.php
+//$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['auth_type'] = 'http';
+
+测试  浏览器 192.168.2.251/phpmyadmin/index.php
+root
+123456
+```
+
+
+
+作业
+
+至少安装成功一次 LAMP 环境       最好两次以上！
+
+安装memcache服务
+
+
+

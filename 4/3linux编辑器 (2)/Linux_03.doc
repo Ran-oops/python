@@ -1,0 +1,289 @@
+## vim编辑器与软件安装
+
+---
+vim编辑器
+全屏幕纯文本编辑器
+
+vi -> vim (加强版)
+
+三种模式：  命令模式                插入模式                     末行模式
+
+​        a   i   o                      ESC                       Shitft + :    
+
+​                                             :wq  保存退出  :w 保存  :q 退出
+
+​								    :q! 不保存退出  :wq! 强制保存退出（root）
+
+vim   test1.py                                          命令模式
+
+vim   install.log     
+
+光标移动     h  j   k   l             :n   行号   :300      gg  光标移动到第一行   G 移动最后一行
+
+设置行号  :set nu    取消行号  :set nonu            
+
+复制  yy      复制多行  nyy    
+
+粘贴    p   
+
+删除(剪切)单字符   x     删除多字符  nx 
+
+删除（剪切）行  dd      删除多行 ndd             dG   从当前行到最后全部删除
+
+撤销  u        反撤销  ctrl + r
+
+颜色开关（语法高亮） :syntax off  关闭   :syntax  on   开启 
+
+
+
+手动建立配置文件
+
+vim   ~/.vimrc        
+
+set nu
+
+
+
+查找功能
+
+vim  install.log 
+
+/i686   N  向下    n 向上   查找i686 
+
+/root    查找root 
+
+替换功能
+
+vim  install.log
+
+:%s/i686/ooooo/g    全文替换
+
+:690,700s/i686/ooooo/g  范围替换
+
+注释   #    //
+
+vim  test1.py
+
+:21,30s/^/#/g    添加注释       :25,30s/^#//g   取消注释
+
+:60,70s/^/\/\//g   添加注释      :65,70s/^\/\///g  取消注释 
+
+### 软件包管理
+
+分类： 源码包    .tar.gz    .tar.bz2 
+
+​	     源代码开放      自由定制  
+
+​	      编译时间长      一旦报错 比较难解决
+
+​            二进制包(编译后的源码包)      .rpm    
+
+​		安装速度快   简易
+
+​               自定义性差   依赖性
+
+ #### 二进制包管理（安装）
+
+1） rpm 命令手动安装                 2）yum 命令 自动化管理
+
+挂载  mount  /dev/sr0  /media
+
+cd  /media/Packages/
+
+ls  |  wc  -l     统计软件包数量
+
+软件包命名：软件名-版本号-更新次数.企业版本.硬件平台.rpm
+
+i386 i686  32位系统
+noarch  跨平台
+x86_64    64位系统
+
+​                                                            
+
+安装tree-1.5.3-3.el6.i686.rpm 目录树  （查看目录/系统结构）
+
+rpm  -ivh   tree-1.5.3-3.el6.i686.rpm  安装
+
+测试  tree
+
+​	tree   /root
+
+​	tree   /   查看系统结构
+
+
+
+rpm   -Uvh    软件包名     升级 
+
+rpm   -e   软件名     卸载 
+
+查询
+
+rpm  -q   软件名
+
+rpm  -q    tree   查看tree 是否被安装
+
+rpm  -qa   |  wc  -l   查看安装多少个二进制包
+
+
+
+rpm  -qi   tree   查询已经安装的软件包的信息
+
+rpm   -qip  tree-1.5.3-3.el6.i686.rpm 查询未安装的软件包的信息
+
+
+
+查询二进制包安装的位置
+
+rpm  -ql   tree   查询已经安装的软件包的位置
+
+rpm  -qlp   tree-1.5.3-3.el6.i686.rpm  查询未被安装的软件包将要安装的位置
+
+
+
+rpm  -qf  /bin/ls    查询命令属于哪一个软件包
+
+
+
+2）二进制包 自动化安装   yum       依赖性
+
+1.来源 软件仓库 （网络yum源  光盘yum源）
+
+2.计算依赖性  下载软件   自动安装 
+
+3.测试 
+
+yum  -y  install   软件名    安装
+
+yum   -y  update  软件名  升级 
+
+yum   -y   remove   软件名    卸载
+
+yum   list     查询所有可以使用yum安装的软件
+
+
+
+配置光盘yum源 
+
+1)进入目录 修改网络yum源文件名
+
+cd  /etc/yum.repos.d/ 
+
+mv CentOS-Base.repo  CentOS-Base.repo.bak
+
+2）挂载光盘
+
+mount   /dev/sr0   /media
+
+3）配置光盘yum源文件
+
+vim   CentOS-Media.repo
+
+baseurl=file:///media/
+
+gpgcheck=0
+
+enabled=1
+
+
+
+测试   yum   list
+
+yum  -y install  tree     安装 tree
+
+yum  -y  remove  tree    卸载 tree
+
+
+安装 gcc  (C语言编译器)
+
+yum  -y install  gcc 
+
+测试   gcc 
+
+
+源码包安装
+
+远程管理工具    xshell 
+
+远程传输工具     xftp
+
+传输 httpd-2.2.29.tar.gz  到 linux 系统
+
+1）解压
+
+tar  -zxvf   httpd-2.2.29.tar.gz  
+
+2）进入解压目录 
+
+cd  httpd-2.2.29
+
+ls
+
+3）查看文件 README   INSTALL
+
+vim   README
+
+vim  INSTALL
+
+4）检查配置生成Makefile文件 configure
+
+./configure   --prefix=/usr/local/apache2/
+
+5）编译
+
+make 
+
+6）编译安装
+
+make  install
+
+
+
+启动服务
+
+/usr/local/apache2/bin/apachectl   start   
+
+测试   
+
+windows 打开浏览器   192.168.2.251        It works!
+
+/usr/local/apache2/bin/apachectl  stop   关闭服务
+
+make clean   清除 
+
+
+
+补充命令： 
+
+date   查看日期 时间 
+
+date   -s  20170724    修改日期
+
+date    -s   15:40:59     修改时间
+
+man   date
+
+
+
+du  -sh   统计当前目录大小  -s  总和    h  常见单位
+
+du  -sh  /root
+
+du    -sh  /
+
+
+
+## 作业
+
+写word 文档 一遍 
+
+课堂笔记一遍 
+
+练习  至少三遍
+
+练习题  完成
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+####1. Linux下安装操作：
+	1.1 #安装memcache扩展模块
+		
+	unzip  pecl-memcache-php7.zip
+        cd  pecl-memcache-php7
+        /usr/local/php/bin/phpize
+       ./configure --with-php-config=/usr/local/php/bin/php-config
+        make && make install
+
+       修改/usr/local/php/etc/php.ini
+       extension_dir = "/usr/local/php/lib/php/extensions/no-debug-zts-20151012/"
+       extension="memcache.so";
+       #重启apache，通过浏览器 在phpinfo中可以找到这个模块
+ 
+       1.2 #安装缓存服务 memcached-1.4.4-3.el6.i686.rpm
+
+       mount /dev/sr0 /mnt/cdrom/     挂载ISO镜像文件
+       yum -y install memcached 
+       useradd memcache    添加memcache用户
+       memcached -d -m 128 -l 127.0.0.1 -p 11211 -u memcache  启动服务
+       chkconfig memcached on  设置开机自启动

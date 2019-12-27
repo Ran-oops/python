@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>练习 | 兄弟连Linux基础教程 (Python 学科)</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../Linux基本知识/Linux常用命令.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.3"
+        data-chapter-title="练习"
+        data-filepath="Linux基本知识/练习.md"
+        data-basepath=".."
+        data-revision="Wed Jul 19 2017 17:30:53 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        兄弟连Linux基础教程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> Linux简介及安装</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Linux简介及安装/Linux简介.html">
+            
+                
+                    <a href="../Linux简介及安装/Linux简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Linux简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Linux简介及安装/安装VM虚拟机.html">
+            
+                
+                    <a href="../Linux简介及安装/安装VM虚拟机.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        安装VM虚拟机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Linux简介及安装/安装Linux.html">
+            
+                
+                    <a href="../Linux简介及安装/安装Linux.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        安装Linux
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Linux简介及安装/关闭防火墙及修改IP.html">
+            
+                
+                    <a href="../Linux简介及安装/关闭防火墙及修改IP.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        关闭防火墙及修改IP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Linux简介及安装/Xshell安装及使用方式.html">
+            
+                
+                    <a href="../Linux简介及安装/Xshell安装及使用方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Xshell安装及使用方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Linux简介及安装/练习.html">
+            
+                
+                    <a href="../Linux简介及安装/练习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        练习
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> Linux基本知识</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="Linux基本知识/提示符和命令格式.html">
+            
+                
+                    <a href="../Linux基本知识/提示符和命令格式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        命令提示符和命令格式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Linux基本知识/Linux常用命令.html">
+            
+                
+                    <a href="../Linux基本知识/Linux常用命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Linux常用命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="Linux基本知识/练习.html">
+            
+                
+                    <a href="../Linux基本知识/练习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        练习
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >兄弟连Linux基础教程 (Python 学科)</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h1>
+<hr>
+<h4 id="1linux&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x7EC3;&#x4E60;">1.Linux&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x7EC3;&#x4E60;</h4>
+<pre><code>1.root&#x7528;&#x6237;&#x7684;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;
+
+
+2.&#x666E;&#x901A;&#x7528;&#x6237;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;
+
+
+3.&#x91CD;&#x542F;&#x548C;&#x9A6C;&#x4E0A;&#x5173;&#x673A;
+
+
+4.&#x5E2E;&#x52A9;&#x547D;&#x4EE4;
+
+
+5.&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;
+
+
+6.&#x5207;&#x6362;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x5230;/etc
+
+
+7.&#x5207;&#x6362;&#x5230;&#x5BBF;&#x4E3B;&#x76EE;&#x5F55;&#xFF08;&#x5BB6;&#x76EE;&#x5F55;&#xFF09;
+
+
+8.&#x663E;&#x793A;/etc&#x4E0B;&#x6240;&#x6709;&#x7684;&#x76EE;&#x5F55;&#x5185;&#x5BB9;&#xFF0C;&#x5305;&#x62EC;&#x9690;&#x85CF;&#x6587;&#x4EF6;
+
+
+9.&#x4EE5;&#x957F;&#x683C;&#x5F0F;&#x663E;&#x793A;/etc&#x4E0B;&#x7684;&#x5185;&#x5BB9;
+
+
+10.&#x4EE5;&#x957F;&#x683C;&#x5F0F;&#x663E;&#x793A;/etc&#x76EE;&#x5F55;&#x672C;&#x8EAB;&#x7684;&#x5185;&#x5BB9;
+
+
+11.&#x521B;&#x5EFA;/etc/test&#x76EE;&#x5F55; 
+
+
+12.&#x521B;&#x5EFA;/etc/test/file&#x7684;&#x7A7A;&#x6587;&#x4EF6;
+
+
+13.&#x62F7;&#x8D1D;&#x6587;&#x4EF6;file01.txt&#x4E3A;file02.txt
+
+
+14.&#x62F7;&#x8D1D;&#x76EE;&#x5F55;/tmp&#x4E3A;/var/tmp
+
+
+15.&#x5220;&#x9664;&#x6587;&#x4EF6;file.txt
+
+
+16.&#x5220;&#x9664;&#x76EE;&#x5F55;/test
+
+
+17.&#x5F3A;&#x5236;&#x5220;&#x9664;/test&#x76EE;&#x5F55;
+
+
+18.&#x5C06;&#x6587;&#x4EF6;file01.txt&#x91CD;&#x547D;&#x540D;&#x4E3A;file02.txt
+
+
+19.&#x5C06;/etc/file.txt&#x79FB;&#x52A8;&#x5230;/tmp&#x4E0B;
+
+
+20.&#x5C06;/etc/file.txt&#x79FB;&#x52A8;&#x5230;/tmp&#x4E0B;&#x5E76;&#x91CD;&#x547D;&#x540D;&#x4E3A;new.txt
+
+
+21.&#x67E5;&#x627E;/etc&#x4E0B;&#x540D;&#x4E3A;file.txt&#x7684;&#x6587;&#x4EF6;
+
+
+22.&#x5206;&#x9875;&#x663E;&#x793A;file.txt&#x7684;&#x5185;&#x5BB9;
+
+
+23.&#x5C06;a.php&#x548C;b.html&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x6253;&#x5305;&#x5E76;&#x538B;&#x7F29;&#x6210;new.tar.gz
+
+
+24.&#x5C06;a.php&#x548C;b.html&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x6253;&#x5305;&#x5E76;&#x538B;&#x7F29;&#x6210;new.tar.bz2
+
+
+25.&#x4F7F;&#x7528;ping&#x6765;&#x6D4B;&#x8BD5;&#x7F51;&#x7EDC;&#x7684;&#x8FDE;&#x901A;&#x6027;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x53D1;&#x5305;&#x6570;&#x4E3A;5&#x6B21;
+
+
+26.&#x4E34;&#x65F6;&#x8BBE;&#x7F6E;&#x7F51;&#x5361;&#x7684;ip&#x4E3A;192.168.10.250
+
+
+27.&#x5199;&#x51FA;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x5EFA;&#x7ACB;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x7684;&#x6743;&#x9650;&#x4F4D;
+
+
+28.&#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;ls&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;
+
+
+29.&#x663E;&#x793A;&#x6587;&#x4EF6;file.txt&#x4E2D;&#x542B;&#x6709;#&#x53F7;&#x7684;&#x884C;
+
+
+30.&#x663E;&#x793A;&#x6587;&#x4EF6;file.txt&#x4E2D;&#x6CA1;&#x6709;#&#x53F7;&#x5F00;&#x5934;&#x7684;&#x884C;
+
+
+31.&#x8D4B;&#x4E88;&#x6587;&#x4EF6;/test/file&#x6240;&#x5C5E;&#x7EC4;&#x5199;&#x6743;&#x9650;
+
+
+32.&#x4FEE;&#x6539;&#x76EE;&#x5F55;/dir&#x6240;&#x6709;&#x7528;&#x6237;&#x5177;&#x6709;&#x7684;&#x5168;&#x90E8;&#x6743;&#x9650;
+
+
+33.&#x6539;&#x53D8;&#x6587;&#x4EF6;/test/file&#x7684;&#x6240;&#x6709;&#x8005;&#x4E3A;phper
+
+
+34.&#x6539;&#x53D8;&#x6587;&#x4EF6;/test/file&#x7684;&#x6240;&#x5C5E;&#x7EC4;&#x4E3A; lampbrother
+
+
+35.&#x6302;&#x8F7D;&#x5149;&#x76D8;&#x955C;&#x50CF;&#x6587;&#x4EF6;&#x6B65;&#x9AA4;
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Linux基本知识/Linux常用命令.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Linux常用命令"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

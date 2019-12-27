@@ -1,0 +1,312 @@
+网络应用
+
+---
+
+网络配置
+
+IP设置 
+
+ifconfig   eth0   192.168.2.251     临时IP        
+
+setup        设置永久IP
+
+service   network   restart      (/etc/rc.d/init.d/network  restart)    重启网络服务
+
+网卡信息文件  vim  /etc/sysconfig/network-scripts/ifcfg-eth0   
+
+  8 IPADDR=192.168.2.251
+  9 NETMASK=255.255.255.0
+ 10 GATEWAY=192.168.2.1
+
+主机名修改 
+
+hostname    查看主机名 
+
+hostname   lampbrother   临时修改主机名
+
+vim  /etc/sysconfig/network      永久修改主机名
+
+HOSTNAME=lampbrother
+
+
+
+DNS设置
+
+setup  设置DNS
+
+vim  /etc/resolv.conf
+
+nameserver  114.114.114.114
+
+网络命令
+
+ifup   eth0   开启网卡
+
+ifdown  eth0   关闭网卡
+
+netstat  -an   查看网络状态
+
+netstat  -tlun   t  tcp   u  udp   l  listen 
+
+netstat  -rn    查看网关
+
+route  del   default   gw   192.168.2.1   删除默认网关
+
+route   add  default   gw   192.168.2.1  添加默认网关
+
+ping  192.168.2.250       ICMP协议   测试网络连通协议    
+
+ping   -c  5  -s   10000   192.168.2.250     -s   发送数据大小     
+
+## FTP文件上传下载服务
+
+软件    vsftp      ISO镜像文件
+
+原理    21端口  传输命令
+
+​            20端口   传输数据（文件）
+
+用户    系统用户          上传位置  /home/用户名
+
+​           匿名用户  anonymous         下载位置  /var/ftppub   
+
+搭建服务步骤：
+
+1.安装软件
+
+mount  /dev/sr0  /media
+
+cd  /media/Packages/
+
+ls   vsftpd-2.2.2-21.el6.i686.rpm
+
+yum  -y install   vsftpd
+
+2.修改配置文件
+
+vim  /etc/vsftpd/vsftpd.conf
+
+85 ftpd_banner=Welcome to python-02  blah FTP service.
+
+3.启动服务  测试
+
+关闭防火墙  setup
+
+关闭selinux
+
+vim  /etc/selinux/config
+
+SELINUX=disabled
+
+reboot
+
+启动服务    service   vsftpd  start    
+
+​	          netstat  -tlun         看到21端口
+
+测试   1)   windows       匿名用户登录    ftp://192.168.2.251      /var/ftp/pub
+
+​                                      系统用户登录     ftp://f1@192.168.2.251      /home/f1
+
+​          2)  第三方工具 FileZilla    匿名用户登录
+
+​						   系统用户登录
+
+
+
+实验 1.  限制用户目录权限
+
+1）修改配置文件
+
+vim /etc/vsftpd/vsftpd.conf
+
+ 96 chroot_local_user=YES  --->所有用户限制在家目录下
+
+
+
+2)重启服务 测试
+
+service  vsftpd  restart
+
+测试 FileZilla    f1登录
+
+## Samba 文件共享服务
+
+windows  ->  linux    共享    Samba  
+
+原理     smbd     提供客户端资源访问         TCP        139    445  
+
+​             nmbd     提供netbios 主机名解析     UDP    137   138
+
+服务搭建步骤：
+
+1.安装软件     ISO 
+
+mount  /dev/sr0  /media
+
+yum  -y  install    samba
+
+2.修改配置文件
+
+安全级别     share     无密码    （匿名用户）
+
+​                   user      添加samba用户设置samba密码   
+
+​		    server    需要服务器做解析
+
+实验1： 安全级别  share    共享目录 /movie    
+
+1）建立目录/movie
+
+​     mkdir   /movie
+
+​     chmod  777  /movie
+
+2）修改配置文件
+
+vim  /etc/samba/smb.conf
+
+101         security = share
+
+263 [movie]
+264         comment = dianying
+265         path = /movie
+266         browseable = yes
+267         guest ok = yes
+268         writable = yes
+
+3）启动服务  测试
+
+关闭防火墙  关闭selinux
+
+service  smb  start
+
+service  nmb  start  
+
+netstat  -tlun   查看tcp和udp协议监听端口
+
+测试     
+
+```
+\\192.168.2.251
+```
+
+网络驱动映射
+
+实验2：安全级别  user     共享  /pub  所有用户能访问上传     /soft  只有aa能访问上传
+
+1）建立目录
+
+mkdir  /pub
+
+mkdir  /soft
+
+chmod  777  /pub
+
+chmod  700 /soft
+
+useradd  aa
+
+passwd  aa
+
+chown    aa   /soft
+
+   
+
+2）修改配置文件
+
+vim  /etc/samba/smb.conf
+
+101         security = user
+
+263 [pub]   
+264         comment = public
+265         path = /pub
+266         browseable = yes
+267         writable = yes
+268 
+269 [soft]
+270         comment = software
+271         path = /soft
+272         browseable = yes
+273         writable = yes
+
+3）添加samba用户
+
+smbpasswd   -a    aa
+
+smbpasswd   -a    f1
+
+pdbedit  -L    查看samba用户
+
+
+
+4）重启服务  测试
+
+service  smb  restart
+
+service  nmb  restart
+
+测试      f1 登录       
+
+​	    CMD   net  use  *   /del    删除连接
+
+​	     aa  登录
+
+## SSH 安全登录
+
+远程连接
+
+ssh    root@192.168.2.251  
+
+网络复制  scp   
+
+scp   root@192.168.2.140:/root/httpd-2.2.29.tar.gz    /root     下载文件 
+
+scp  hello.list   root@192.168.2.140:/root/      上传文件
+
+scp   -r   root@192.168.2.140:/etc/     /root/    下载目录
+
+scp  -r   /etc   root@192.168.2.140:/root/      上传目录 
+
+
+
+ssh 密钥登录
+
+ssh-keygen -t rsa -P ’’
+
+ 
+
+-P表示密码
+
+cd .ssh 
+
+cp  id_rsa.pub   authorized_keys
+
+
+
+chmod 600    authorized_keys
+
+ 
+
+客户端:
+
+下载私钥      登录测试
+
+设置 /etc/ssh/sshd_config  禁止使用密码登录
+
+ 
+
+66 PasswordAuthentication no
+
+ 
+
+重启sshd服务
+
+
+
+## 作业
+
+课堂笔记写一遍
+
+实验至少三遍

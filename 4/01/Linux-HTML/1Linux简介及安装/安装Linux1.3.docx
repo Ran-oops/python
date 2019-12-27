@@ -1,0 +1,420 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>安装Linux | 兄弟连Linux基础教程 (Python 学科)</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Linux简介及安装/关闭防火墙及修改IP.html" />
+    
+    
+    <link rel="prev" href="../Linux简介及安装/安装VM虚拟机.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.3"
+        data-chapter-title="安装Linux"
+        data-filepath="Linux简介及安装/安装Linux.md"
+        data-basepath=".."
+        data-revision="Wed Jul 19 2017 17:30:53 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        兄弟连Linux基础教程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> Linux简介及安装</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Linux简介及安装/Linux简介.html">
+            
+                
+                    <a href="../Linux简介及安装/Linux简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Linux简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Linux简介及安装/安装VM虚拟机.html">
+            
+                
+                    <a href="../Linux简介及安装/安装VM虚拟机.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        安装VM虚拟机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="Linux简介及安装/安装Linux.html">
+            
+                
+                    <a href="../Linux简介及安装/安装Linux.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        安装Linux
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Linux简介及安装/关闭防火墙及修改IP.html">
+            
+                
+                    <a href="../Linux简介及安装/关闭防火墙及修改IP.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        关闭防火墙及修改IP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Linux简介及安装/Xshell安装及使用方式.html">
+            
+                
+                    <a href="../Linux简介及安装/Xshell安装及使用方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Xshell安装及使用方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Linux简介及安装/练习.html">
+            
+                
+                    <a href="../Linux简介及安装/练习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        练习
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> Linux基本知识</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="Linux基本知识/提示符和命令格式.html">
+            
+                
+                    <a href="../Linux基本知识/提示符和命令格式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        命令提示符和命令格式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Linux基本知识/Linux常用命令.html">
+            
+                
+                    <a href="../Linux基本知识/Linux常用命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Linux常用命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Linux基本知识/练习.html">
+            
+                
+                    <a href="../Linux基本知识/练习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        练习
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >兄弟连Linux基础教程 (Python 学科)</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x5B89;&#x88C5;&#x524D;&#x914D;&#x7F6E;">&#x5B89;&#x88C5;&#x524D;&#x914D;&#x7F6E;</h1>
+<hr>
+<p>&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x7F51;&#x76D8;&#x94FE;&#x63A5;&#xFF1A;<a href="https://pan.baidu.com/s/1mi7MhMo" target="_blank">CentOS-6.8-i386</a></p>
+<h4 id="1&#x65B0;&#x5EFA;&#x865A;&#x62DF;&#x673A;">1.&#x65B0;&#x5EFA;&#x865A;&#x62DF;&#x673A;</h4>
+<p><img src="../assets/&#x65B0;&#x5EFA;&#x865A;&#x62DF;&#x673A;.png" alt=""></p>
+<h4 id="2&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;">2.&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;</h4>
+<p><img src="../assets/&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;.png" alt=""></p>
+<h4 id="3&#x9009;&#x62E9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x7A0D;&#x540E;&#x5B89;&#x88C5;">3.&#x9009;&#x62E9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x7A0D;&#x540E;&#x5B89;&#x88C5;</h4>
+<p><img src="../assets/&#x7A0D;&#x540E;&#x5B89;&#x88C5;.png" alt=""></p>
+<h4 id="4&#x9009;&#x62E9;linux&#xFF0C;centos&#xFF0C;&#x6839;&#x636E;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x9009;&#x62E9;32&#x6216;64&#x4F4D;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4F7F;&#x7528;&#x7684;32&#x4F4D;">4.&#x9009;&#x62E9;Linux&#xFF0C;CentOS&#xFF0C;&#x6839;&#x636E;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x9009;&#x62E9;32&#x6216;64&#x4F4D;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4F7F;&#x7528;&#x7684;32&#x4F4D;</h4>
+<p><img src="../assets/CentOS.png" alt=""></p>
+<h4 id="5&#x9009;&#x62E9;&#x865A;&#x62DF;&#x673A;&#x7684;&#x4FDD;&#x5B58;&#x4F4D;&#x7F6E;&#x53CA;&#x540D;&#x79F0;">5.&#x9009;&#x62E9;&#x865A;&#x62DF;&#x673A;&#x7684;&#x4FDD;&#x5B58;&#x4F4D;&#x7F6E;&#x53CA;&#x540D;&#x79F0;</h4>
+<p><img src="../assets/&#x9009;&#x62E9;&#x865A;&#x62DF;&#x673A;&#x7684;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;.png" alt=""></p>
+<h4 id="6&#x9009;&#x62E9;&#x78C1;&#x76D8;&#x5927;&#x5C0F;&#xFF0C;&#x6211;&#x4EEC;&#x7528;&#x6765;&#x6D4B;&#x8BD5;&#xFF0C;20g&#x8DB3;&#x77E3;&#x3002;">6.&#x9009;&#x62E9;&#x78C1;&#x76D8;&#x5927;&#x5C0F;&#xFF0C;&#x6211;&#x4EEC;&#x7528;&#x6765;&#x6D4B;&#x8BD5;&#xFF0C;20G&#x8DB3;&#x77E3;&#x3002;</h4>
+<p><img src="../assets/&#x9009;&#x62E9;&#x78C1;&#x76D8;&#x5927;&#x5C0F;.png" alt=""></p>
+<h4 id="7&#x8FD9;&#x91CC;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x786C;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;&#x91CC;&#x9762;&#x6709;&#x4E9B;&#x9009;&#x9879;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#x3002;">7.&#x8FD9;&#x91CC;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x786C;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;&#x91CC;&#x9762;&#x6709;&#x4E9B;&#x9009;&#x9879;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#x3002;</h4>
+<p><img src="../assets/&#x81EA;&#x5B9A;&#x4E49;&#x786C;&#x4EF6;.png" alt=""></p>
+<h4 id="71&#x9009;&#x62E9;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;">7-1&#x9009;&#x62E9;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;</h4>
+<p><img src="../assets/&#x7CFB;&#x7EDF;&#x955C;&#x50CF;.png" alt=""></p>
+<h4 id="72&#x4FEE;&#x6539;&#x7F51;&#x7EDC;&#x9002;&#x914D;&#x5668;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x6865;&#x63A5;&#x6A21;&#x5F0F;">7-2&#x4FEE;&#x6539;&#x7F51;&#x7EDC;&#x9002;&#x914D;&#x5668;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x6865;&#x63A5;&#x6A21;&#x5F0F;</h4>
+<p><img src="../assets/&#x7F51;&#x7EDC;&#x9002;&#x914D;&#x5668;.png" alt=""></p>
+<h1 id="&#x5F00;&#x59CB;&#x5B89;&#x88C5;linux">&#x5F00;&#x59CB;&#x5B89;&#x88C5;Linux</h1>
+<hr>
+<h4 id="1&#x5F00;&#x542F;&#x865A;&#x62DF;&#x673A;&#x5F00;&#x59CB;&#x5B89;&#x88C5;">1.&#x5F00;&#x542F;&#x865A;&#x62DF;&#x673A;&#x5F00;&#x59CB;&#x5B89;&#x88C5;</h4>
+<p><img src="../assets/&#x5F00;&#x542F;&#x5B89;&#x88C5;.png" alt=""></p>
+<h4 id="2&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x6216;&#x8005;&#x66F4;&#x65B0;&#x7CFB;&#x7EDF;">2.&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x6216;&#x8005;&#x66F4;&#x65B0;&#x7CFB;&#x7EDF;</h4>
+<p><img src="../assets/&#x66F4;&#x65B0;&#x7CFB;&#x7EDF;.png" alt=""></p>
+<h4 id="3&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x524D;&#x6D4B;&#x8BD5;&#xFF0C;&#x9009;&#x62E9;skip&#x8DF3;&#x8FC7;&#x5373;&#x53EF;&#x3002;">3.&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x524D;&#x6D4B;&#x8BD5;&#xFF0C;&#x9009;&#x62E9;skip&#x8DF3;&#x8FC7;&#x5373;&#x53EF;&#x3002;</h4>
+<p><img src="../assets/&#x5B89;&#x88C5;&#x524D;&#x6D4B;&#x8BD5;.png" alt=""></p>
+<h4 id="4&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x7684;&#x63D0;&#x793A;&#x8BED;&#x8A00;&#xFF0C;&#x679C;&#x65AD;&#x4E2D;&#x6587;&#xFF0C;&#x7EE7;&#x7EED;next">4.&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x7684;&#x63D0;&#x793A;&#x8BED;&#x8A00;&#xFF0C;&#x679C;&#x65AD;&#x4E2D;&#x6587;&#xFF0C;&#x7EE7;&#x7EED;Next</h4>
+<p><img src="../assets/&#x63D0;&#x793A;&#x8BED;&#x8A00;.png" alt=""></p>
+<h4 id="5&#x952E;&#x76D8;&#x4E60;&#x60EF;&#x9009;&#x62E9;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x9009;&#x62E9;&#x7684;&#x662F;&#x7F8E;&#x56FD;&#x82F1;&#x8BED;&#x5F0F;">5.&#x952E;&#x76D8;&#x4E60;&#x60EF;&#x9009;&#x62E9;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x9009;&#x62E9;&#x7684;&#x662F;&#x7F8E;&#x56FD;&#x82F1;&#x8BED;&#x5F0F;</h4>
+<p><img src="../assets/&#x952E;&#x76D8;&#x4E60;&#x60EF;.png" alt=""></p>
+<h4 id="6&#x9009;&#x62E9;&#x57FA;&#x672C;&#x5B58;&#x50A8;&#x8BBE;&#x5907;">6.&#x9009;&#x62E9;&#x57FA;&#x672C;&#x5B58;&#x50A8;&#x8BBE;&#x5907;</h4>
+<p><img src="../assets/&#x57FA;&#x672C;&#x5B58;&#x50A8;&#x8BBE;&#x5907;.png" alt=""></p>
+<h4 id="7&#x8FD9;&#x91CC;&#x6211;&#x662F;&#x65B0;&#x5EFA;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x9700;&#x4FDD;&#x7559;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x9009;&#x62E9;&#x662F;&#xFF0C;&#x5FFD;&#x7565;&#x6240;&#x6709;&#x6570;&#x636E;">7.&#x8FD9;&#x91CC;&#x6211;&#x662F;&#x65B0;&#x5EFA;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x9700;&#x4FDD;&#x7559;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x9009;&#x62E9;&#x201C;&#x662F;&#xFF0C;&#x5FFD;&#x7565;&#x6240;&#x6709;&#x6570;&#x636E;&#x201D;</h4>
+<p><img src="../assets/&#x5FFD;&#x7565;&#x6570;&#x636E;.png" alt=""></p>
+<h4 id="8&#x4FEE;&#x6539;&#x4E3B;&#x673A;&#x540D;&#xFF0C;&#x6839;&#x636E;&#x4F60;&#x7684;&#x9700;&#x8981;&#x53BB;&#x66F4;&#x6539;&#x5427;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x4E3B;&#x673A;&#x540D;">8.&#x4FEE;&#x6539;&#x4E3B;&#x673A;&#x540D;&#xFF0C;&#x6839;&#x636E;&#x4F60;&#x7684;&#x9700;&#x8981;&#x53BB;&#x66F4;&#x6539;&#x5427;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x4E3B;&#x673A;&#x540D;</h4>
+<p><img src="../assets/&#x4FEE;&#x6539;&#x4E3B;&#x673A;&#x540D;.png" alt=""></p>
+<h4 id="9&#x8BBE;&#x7F6E;root&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;">9.&#x8BBE;&#x7F6E;root&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;</h4>
+<p><img src="../assets/&#x8BBE;&#x7F6E;root&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;.png" alt=""></p>
+<h4 id="10&#x9009;&#x62E9;&#x81EA;&#x5B9A;&#x4E49;&#x5206;&#x533A;">10.&#x9009;&#x62E9;&#x81EA;&#x5B9A;&#x4E49;&#x5206;&#x533A;</h4>
+<p><img src="../assets/&#x81EA;&#x5B9A;&#x4E49;&#x5206;&#x533A;.png" alt=""></p>
+<p><strong>&#x5206;&#x533A;&#x7C7B;&#x578B;&#xFF1A;</strong></p>
+<ul>
+<li>&#x4E3B;&#x5206;&#x533A;&#xFF1A;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x5206;&#x56DB;&#x4E2A;</li>
+<li>&#x6269;&#x5C55;&#x5206;&#x533A;&#xFF1A;&#x6269;&#x5C55;&#x5206;&#x533A;&#x6700;&#x591A;1&#x4E2A;&#xFF0C;&#x6269;&#x5C55;&#x4E0D;&#x80FD;&#x683C;&#x5F0F;&#x5316;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x5199;&#x5165;&#x6570;&#x636E;&#x3002;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x903B;&#x8F91;&#x5206;&#x533A;&#x3002;&#x6269;&#x5C55;&#x5206;&#x533A;&#x52A0;&#x4E3B;&#x5206;&#x533A;&#x6700;&#x591A;&#x6709;4&#x4E2A;&#x3002;</li>
+<li>&#x903B;&#x8F91;&#x5206;&#x533A;&#xFF1A;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;  &#x5B58;&#x653E;&#x6570;&#x636E;</li>
+</ul>
+<p><strong>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1A;</strong></p>
+<pre><code>Windows&#xFF1A;fat16  fat32  ntfs
+
+Linux&#xFF1A;ext2  ext3  ext4
+</code></pre><p><strong>&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
+<pre><code>linux&#x4E0B;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x90FD;&#x662F;&#x4EE5;&#x6587;&#x4EF6;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x5B58;&#x5728;(&#x4E00;&#x5207;&#x7686;&#x6587;&#x4EF6;)&#xFF0C;&#x5305;&#x62EC;&#x786C;&#x4EF6;
+linux&#x4E25;&#x683C;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;
+linux&#x4E0B;&#x4E0D;&#x4EE5;&#x6269;&#x5C55;&#x540D;&#x533A;&#x5206;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x662F;&#x9760;&#x6743;&#x9650;.&#x4F46;&#x662F;&#x6709;&#x7279;&#x5217;&#xFF0C;&#x5982;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#xFF0C;rpm&#x8F6F;&#x4EF6;&#x5305;&#x6587;&#x4EF6;
+* &#x6240;&#x6709;&#x7684;&#x53EF;&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#xFF0C;&#x90FD;&#x5FC5;&#x987B;&#x6302;&#x8F7D;&#x4F7F;&#x7528;&#x3002;&#x5305;&#x62EC;&#x786C;&#x76D8;
+</code></pre><p><strong>&#x6302;&#x8F7D;&#x8FC7;&#x7A0B;&#xFF1A;</strong></p>
+<pre><code>Windows&#x4E2D;&#xFF1A;&#x76D8;&#x7B26;
+          C:/
+          D:/
+          E:/
+
+Linux&#x4E2D;&#xFF1A;
+    &#x786C;&#x76D8;&#x6587;&#x4EF6;&#x540D;------&#x6307;&#x5B9A;&#x6302;&#x8F7D;&#x76EE;&#x5F55;(&#x76F8;&#x5F53;&#x4E8E;Windows&#x4E2D;&#x7684;&#x76D8;&#x7B26;)   &#x6302;&#x8F7D;
+    /dev/sda1------/boot &#x542F;&#x52A8;&#x5206;&#x533A;
+</code></pre><p><strong>Linux&#x5206;&#x533A;&#x8868;&#x793A;&#xFF1A;</strong></p>
+<pre><code>/dev/hda1  hd:IDE&#x786C;&#x76D8;  sd:SCSI&#xFF0C;SATA&#x786C;&#x76D8;  a&#xFF1A;&#x7B2C;&#x4E00;&#x5757;&#x786C;&#x76D8;  1&#xFF1A;&#x7B2C;&#x4E00;&#x4E2A;&#x5206;&#x533A;
+/dev/sda1  &#x7B2C;&#x4E00;&#x5757;SATA&#x786C;&#x76D8;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5206;&#x533A;
+/dev/sdc5  &#x7B2C;&#x4E09;&#x5757;scsi&#x786C;&#x76D8;&#x7684;&#xFF0C;&#x7B2C;1&#x4E2A;&#x903B;&#x8F91;&#x5206;&#x533A;
+</code></pre><p><strong>Linux&#x5206;&#x533A;&#xFF1A;</strong></p>
+<pre><code>&#x5FC5;&#x987B;&#x5206;&#x533A;
+    /  &#x6839;&#x5206;&#x533A;&#x5FC5;&#x987B;&#x5355;&#x72EC;&#x5206;&#x3002;  &#x8D8A;&#x5927;&#x8D8A;&#x597D;  C:&#x5206;&#x533A;
+    swap&#x5206;&#x533A;  &#x4EA4;&#x6362;&#x5206;&#x533A;  2&#x500D;  &#x4E0D;&#x8981;&#x5927;&#x4E8E;2GB
+
+&#x5E38;&#x7528;&#x5206;&#x533A;
+    /boot  &#x542F;&#x52A8;&#x5206;&#x533A;  200MB  /dev/sda1  D:&#x5206;&#x533A;
+    /home  E:&#x5206;&#x533A;
+    /www  F:&#x5206;&#x533A;
+</code></pre><h4 id="101swap&#x5206;&#x533A;">10-1.swap&#x5206;&#x533A;</h4>
+<p><img src="../assets/swap&#x5206;&#x533A;.png" alt=""></p>
+<h4 id="102boot&#x5206;&#x533A;">10-2.boot&#x5206;&#x533A;</h4>
+<p><img src="../assets/boot&#x5206;&#x533A;.png" alt=""></p>
+<h4 id="103&#x6839;&#x5206;&#x533A;">10-3.&#x6839;&#x5206;&#x533A;</h4>
+<p><img src="../assets/&#x6839;&#x5206;&#x533A;.png" alt=""></p>
+<h4 id="104&#x5206;&#x533A;&#x540E;&#x7684;&#x7ED3;&#x6784;">10-4.&#x5206;&#x533A;&#x540E;&#x7684;&#x7ED3;&#x6784;</h4>
+<p><img src="../assets/&#x5206;&#x533A;&#x540E;&#x7684;&#x7ED3;&#x6784;.png" alt=""></p>
+<h4 id="105&#x9009;&#x62E9;&#x683C;&#x5F0F;&#x5316;&#x5E76;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x6B65;">10-5.&#x9009;&#x62E9;&#x683C;&#x5F0F;&#x5316;&#x5E76;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x6B65;</h4>
+<p><img src="../assets/&#x683C;&#x5F0F;&#x5316;&#x78C1;&#x76D8;.png" alt="">
+<img src="../assets/&#x4E0B;&#x4E00;&#x6B65;.png" alt=""></p>
+<h4 id="11&#x6700;&#x540E;&#x4E00;&#x6B65;&#xFF0C;&#x9009;&#x62E9;&#x4F60;&#x9700;&#x8981;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9009;&#x62E9;desktop&#x684C;&#x9762;&#x6216;basic-server&#x547D;&#x4EE4;&#x754C;&#x9762;">11.&#x6700;&#x540E;&#x4E00;&#x6B65;&#xFF0C;&#x9009;&#x62E9;&#x4F60;&#x9700;&#x8981;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9009;&#x62E9;&quot;Desktop&quot;(&#x684C;&#x9762;)&#x6216;&quot;Basic Server&quot;(&#x547D;&#x4EE4;&#x754C;&#x9762;)</h4>
+<p><img src="../assets/&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x6A21;&#x5F0F;.png" alt=""></p>
+<h4 id="&#x8FD9;&#x91CC;&#x5C31;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x8DF3;&#x51FA;&#x4E00;&#x4E2A;&#x5F39;&#x6846;&#xFF0C;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x91CD;&#x65B0;&#x5F15;&#x5BFC;&#x5373;&#x53EF;&#xFF0C;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x91CD;&#x65B0;&#x5F00;&#x673A;&#x4E5F;&#x53EF;&#x4EE5;&#x3002;">&#x8FD9;&#x91CC;&#x5C31;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x8DF3;&#x51FA;&#x4E00;&#x4E2A;&#x5F39;&#x6846;&#xFF0C;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x91CD;&#x65B0;&#x5F15;&#x5BFC;&#x5373;&#x53EF;&#xFF0C;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x91CD;&#x65B0;&#x5F00;&#x673A;&#x4E5F;&#x53EF;&#x4EE5;&#x3002;</h4>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Linux简介及安装/安装VM虚拟机.html" class="navigation navigation-prev " aria-label="Previous page: 安装VM虚拟机"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Linux简介及安装/关闭防火墙及修改IP.html" class="navigation navigation-next " aria-label="Next page: 关闭防火墙及修改IP"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

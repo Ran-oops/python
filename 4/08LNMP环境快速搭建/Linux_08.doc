@@ -1,0 +1,286 @@
+ LNMP环境快速搭建-Nginx服务配置
+
+---
+
+ LNMP环境快速搭建
+
+准备工作： 恢复初始化安装      设置IP      关闭防火墙   
+
+​                   配置光盘yum源
+
+安装步骤：1.解压缩  
+
+​                    tar   -zxvf   lnmp1.2-full.tar.gz
+
+​                    ls
+
+​                   2.进入解压目录
+
+​                   cd    lnmp1.2-full
+
+​                   3.安装
+
+```
+./install.sh  lnmp
+```
+
+环境目录和文件：
+
+```
+Nginx 目录: /usr/local/nginx/
+MySQL 目录 : /usr/local/mysql/
+MySQL数据库所在目录：/usr/local/mysql/var/
+PHP目录 : /usr/local/php/
+PHPMyAdmin目录 : /home/wwwroot/default/phpmyadmin/ 
+默认网站目录 : /home/wwwroot/default/
+Nginx日志目录：/home/wwwlogs/
+
+Nginx主配置文件：/usr/local/nginx/conf/nginx.conf
+MySQL配置文件：/etc/my.cnf
+PHP配置文件：/usr/local/php/etc/php.ini
+```
+
+管理命令
+
+lnmp   start  |  restart  | stop   | status
+
+lnmp  nginx  start  |  stop  |  restart   |  status
+
+
+
+配置文件  
+
+ulimit  -a 
+
+ulimit   -n   51200
+
+```
+检查nginx配置文件语句错误
+/usr/local/nginx/sbin/nginx -t
+
+平滑重启nginx进程
+pkill -HUP nginx
+```
+
+
+
+ Nginx实验配置
+
+ 实验1 虚拟主机
+
+1）域名解析  文件解析
+
+C:\Windows\System32\drivers\etc\hosts
+
+```
+192.168.2.251    www.sina.com
+192.168.2.251    www.sohu.com
+```
+
+2）网站目录规划
+
+mkdir   /home/wwwroot/sina/
+
+mkdir   /home/wwwroot/sohu/
+
+vim  /home/wwwroot/sina/index.html
+
+vim  /home/wwwroot/sohu/index.html
+
+3）修改配置文件
+
+vim  /usr/local/nginx/conf/nginx.conf
+
+ 66         listen 80; 
+
+4）建立虚拟主机文件
+
+vim  /usr/local/nginx/conf/vhost/v.conf
+
+```
+  1 server {
+  2         listen 80;
+  3         server_name www.sina.com;
+  4         index index.html  index.htm  index.php;
+  5         root /home/wwwroot/sina/;
+  6 
+  7         include enable-php.conf;
+  8 }
+  9 server {
+ 10         listen 80;
+ 11         server_name www.sohu.com;
+ 12         index index.html  index.htm  index.php;
+ 13         root /home/wwwroot/sohu/;
+ 14 
+ 15         include enable-php.conf;
+ 16 }
+```
+
+5） 重启服务  测试
+
+pkill -HUP nginx  
+
+测试  www.sina.com   www.sohu.com
+
+ 实验2 列表页显示
+
+ 加入  autoindex   on;     
+
+ 实验3 状态监控模块添加
+
+vim  /usr/local/nginx/conf/vhost/v.conf
+
+```
+
+  9 server {
+ 10         listen 80;
+ 11         server_name www.sohu.com;
+ 12         index index.html  index.htm  index.php;
+ 13         root /home/wwwroot/sohu/;
+ 14         location /nginx_status{
+        	stub_status on;
+        	access_log  off;
+       		}
+ 15         include enable-php.conf;
+ 16 }
+```
+
+测试   www.sohu.com/nginx_status
+
+ 实验4  rewrite 重写/重定向
+
+域名跳转   www.sina.com  ->  www.sohu.com
+
+vim  /usr/loca/nginx/conf/vhost/v.conf
+
+ 
+
+```
+server
+        {
+                listen       80;
+                server_name www.sina.com;
+                index index.html index.htm index.php;
+                root  /home/wwwroot/sina;
+
+                if ($http_host = www.sina.com) {
+                        rewrite  (.*)  http://www.sohu.com  permanent;
+                }
+		}
+```
+
+
+
+重启服务  测试
+
+pkill -HUP nginx
+
+测试   www.sina.com  -> www.sohu.com
+
+网页文件跳转
+
+1）修改配置文件
+
+vim  /usr/local/nginx/conf/vhost/v.conf
+
+```
+  1 server {
+  2         listen 80;
+  3         server_name www.sina.com;
+  4         index index.html  index.htm  index.php;
+  5         root /home/wwwroot/sina/;
+  6         rewrite  index(\d+).html  /index.php?id=$1 last;
+  7         include enable-php.conf;
+  8 }       
+```
+
+
+
+2）建立 php文件
+
+vim /home/wwwroot/sina/index.php
+
+```
+  1 <?php
+  2         echo "hi Nginx rewrite";
+  3 ?>
+```
+
+3）重启服务 测试
+
+pkill -HUP nginx
+
+测试  www.sina.com/index5.html
+
+ 实验5  代理负载均衡 （反向代理）
+
+准备工作：   S   192.168.2.251      Nginx       负载均衡
+
+​                     S1   192.168.2.102    Nginx       网站解析
+
+​                     S2    192.168.2.191   Nginx       网站解析
+
+实验步骤：
+
+1）修改S 192.168.2.251  配置文件
+
+vim /usr/local/nginx/conf/nginx.conf
+
+```
+ 63 upstream myweb1 {
+ 64         server 192.168.2.102:80;
+ 65         server 192.168.2.191:80;
+ 66 }       
+ 67 server {
+ 68         listen 80;
+ 69         server_name www.sohu.com;
+ 70         location / {
+ 71         proxy_pass http://myweb1;
+ 72         proxy_next_upstream http_500 http_502 http_503 error timeout invalid_header;
+ 73         proxy_set_header Host $host; 
+ 74         proxy_set_header X-Forwarded-For $remote_addr; 
+ 75 }                
+ 76 } 
+```
+
+
+
+2）修改S1 192.168.2.102        关闭虚拟主机
+
+cd   /home/wwwroot/default/ 
+
+vim index.html
+
+S111111111111
+
+3）修改S1 192.168.2.191        关闭虚拟主机
+
+cd   /home/wwwroot/default/ 
+
+vim index.html
+
+S2222222222
+
+4） 重启S 服务   测试
+
+pkill -HUP nginx  
+
+测试   www.sohu.com      刷新   S1    S2
+
+
+
+ 作业
+
+实验  至少三遍！
+
+复习！
+
+
+
+
+
+
+
+
+
+

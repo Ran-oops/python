@@ -1,0 +1,253 @@
+ Apache 服务配置
+
+---
+
+ 一. Apache简介 
+
+HTTP  超文本传输协议  
+
+HTML  超文本标识语言
+
+统一资源定位符   URL    http://www.sina.com.cn:80/admin/index.html
+
+ 二. 服务安装
+
+1. LAMP 源码包安装（编译安装）
+
+   主要要求      自定义     
+
+2. 二进制包安装  yum  
+
+ 三. 相关文件
+
+源码包
+
+ 配置文件    /usr/local/apache2/etc/httpd.conf    主配置文件
+
+​                    /usr/local/apache2/etc/extra/httpd-*.conf   子配置文件
+
+默认网站根目录   /usr/local/apache2/htdocs/   
+
+日志保存位置    /usr/local/apache2/logs/  
+
+tail  -f  access_log    动态查看文件内容
+
+日志切割与轮替 
+
+vim /etc/logrotate.conf 
+
+```
+/usr/local/apache2/logs/access_log {
+    daily
+    rotate 30
+}
+
+/usr/local/apache2/logs/error_log {
+    daily
+    rotate 30
+}
+```
+
+logrotate -f   /etc/logrotate.conf
+
+cd /usr/local/apache2/logs/
+
+ls
+
+ 四. 配置文件
+
+命令别名  alias
+
+vim /root/.bashrc
+
+alias sto='/usr/local/apache2/bin/apachectl stop'
+alias sta='/usr/local/apache2/bin/apachectl start'
+
+source  /root/.bashrc
+
+sto
+
+sta 
+
+实验1  目录别名      扩容   增加服务目录
+
+1）建立扩容目录
+
+mkdir  /usr/local/apache2/www/
+
+2）修改主配置文件 
+
+vim  /usr/local/apache2/etc/httpd.conf
+
+453 Include etc//extra/httpd-autoindex.conf
+
+3）修改子配置文件
+
+vim  /usr/local/apache2/etc/extra/httpd-autoindex.conf
+
+```
+ 29 Alias /www/ "/usr/local/apache2/www/"
+ 30 
+ 31 <Directory "/usr/local/apache2/www/">
+ 32     Options Indexes
+ 33     AllowOverride None
+ 34     Require all granted
+ 35 </Directory>
+```
+
+4）重启服务  测试
+
+sto
+
+sta
+
+测试  192.168.2.251/www/
+
+实验2 虚拟主机
+
+步骤：1）域名解析       文件解析
+
+C:\Windows\System32\drivers\etc\hosts
+
+192. 168.2.251  www.sina.com
+193. 168.2.251  www.sohu.com
+
+2）网站目录规划
+
+mkdir  -p  /share/sina/
+
+mkdir   /share/sohu/
+
+3）修改主配置文件
+
+vim  /usr/local/apache2/etc/httpd.conf
+
+465 Include etc//extra/httpd-vhosts.conf
+
+4）修改子配置文件
+
+vim  /usr/local/apache2/etc/extra/httpd-vhosts.conf
+
+```
+ 23 <Directory "/share/sina/">
+ 24     Options Indexes
+ 25     AllowOverride None
+ 26     Require all granted
+ 27 </Directory>
+ 28     
+ 29 <Directory "/share/sohu/">
+ 30    Options Indexes 
+ 31    AllowOverride None
+ 32    Require all granted
+ 33 </Directory>
+ 35 <VirtualHost 192.168.2.251>
+ 36     ServerAdmin webmaster@sina.com
+ 37     DocumentRoot "/share/sina/"
+ 38     ServerName www.sina.com
+ 39     ErrorLog "logs/sina-error_log"
+ 40     CustomLog "logs/sina-access_log" common
+ 41 </VirtualHost>
+ 42 
+ 43 <VirtualHost 192.168.2.251>
+ 44     ServerAdmin webmaster@sohu.com
+ 45     DocumentRoot "/share/sohu/"
+ 46     ServerName www.sohu.com
+ 47     ErrorLog "logs/sohu-error_log"
+ 48     CustomLog "logs/sohu-access_log" common
+ 49 </VirtualHost>
+
+```
+
+5）重启服务  测试
+
+sto
+
+sta
+
+测试    www.sina.com    www.sohu.com
+
+实验3  rewrite  重写/重定向
+
+www.sina.com  ->  www.sohu.com  
+
+1）修改主配置文件
+
+vim  /usr/local/apache2/etc/httpd.conf
+
+147 LoadModule rewrite_module modules/mod_rewrite.so
+
+2）修改子配置文件
+
+vim /usr/local/apache2/etc/extra/httpd-vhosts.conf
+
+```
+ 23 <Directory "/share/sina/">
+ 24     Options Indexes FollowSymLinks
+ 25     AllowOverride All
+ 26     Require all granted
+ 27 </Directory>
+```
+
+3）建立权限文件.htaccess
+
+vim  /share/sina/.htaccess
+
+```
+  1 RewriteEngine on
+  2 RewriteCond %{HTTP_HOST} www.sina.com
+  3 RewriteRule .*  http://www.sohu.com
+```
+
+4） 重启服务  测试
+
+sto 
+
+sta 
+
+测试  www.sina.com   -> www.sohu.com
+
+
+
+网页文件跳转
+
+1）修改权限文件
+
+vim /share/sina/.htaccess
+
+```
+  1 RewriteEngine on
+  2 RewriteRule index(\d+).html  index.php?id=$1
+```
+
+2）建立index.php文件
+
+vim /share/sina/index.php
+
+```
+  1 <?php
+  2         echo "hello rewrite!";
+  3 ?>
+
+```
+
+3）重启服务测试
+
+sto
+
+sta
+
+测试  www.sina.com/index5.html
+
+
+
+ 作业
+
+实验至少三遍！
+
+
+
+云服务  ： 阿里云   aws   华为云   腾讯云   百度云   
+
+
+
+
